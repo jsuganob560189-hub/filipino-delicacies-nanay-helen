@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nanay Helen's Kakanin</title>
+
+    <meta
+        name="description"
+        content="Authentic Filipino kakanin made with love. Nanay Helen's Kakanin."
+    >
+
+    <style>
+        :root {
+            --brown: #8b4f20;
+            --dark-brown: #5b3015;
+            --cream: #fffaf0;
+            --light-cream: #f8f0df;
+            --green: #5c7d32;
+            --gold: #c9963e;
+            --white: #ffffff;
+            --text: #30261f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 250, 240, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eadbc4;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: Georgia, serif;
+            font-weight: bold;
+            color: var(--brown);
+            font-size: 20px;
+        }
+
+        .nav-logo img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .cart-button {
+            border: none;
+            background: var(--brown);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            background:
+                linear-gradient(
+                    rgba(255, 250, 240, 0.86),
+                    rgba(255, 250, 240, 0.95)
+                ),
+                url("images/hero-kakanin.jpg") center/cover;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-logo {
+            width: 230px;
+            max-width: 70%;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            color: var(--brown);
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 650px;
+            margin: auto;
+            color: #604a38;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--brown);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--brown);
+            border: 2px solid var(--brown);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            color: var(--brown);
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #725d49;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .about-text h3 {
+            color: var(--brown);
+            font-family: Georgia, serif;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #594a3d;
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu {
+            background: var(--light-cream);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .menu-card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(80, 45, 20, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card h3 {
+            color: var(--brown);
+            font-family: Georgia, serif;
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .menu-card .description {
+            color: #796652;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: var(--dark-brown);
+            font-size: 21px;
+            margin-top: auto;
+        }
+
+        .add-button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 11px;
+            border: none;
+            border-radius: 10px;
+            background: var(--brown);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .add-button:hover {
+            background: var(--dark-brown);
+        }
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery {
+            background: white;
+        }
+
+        .gallery-grid {
+            columns: 3 280px;
+            column-gap: 18px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            margin-bottom: 18px;
+            border-radius: 18px;
+            display: block;
+            break-inside: avoid;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        /* =========================
+           PACKAGES
+        ========================= */
+
+        .packages {
+            background: var(--light-cream);
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .package-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 7px 25px rgba(80, 45, 20, 0.08);
+        }
+
+        .package-card h3 {
+            color: var(--brown);
+            font-family: Georgia, serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .package-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee3d2;
+        }
+
+        .package-row:last-child {
+            border-bottom: none;
+        }
+
+        .package-price {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* =========================
+           CART
+        ========================= */
+
+        .cart-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 2000;
+        }
+
+        .cart-overlay.active {
+            display: block;
+        }
+
+        .cart-panel {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: min(500px, 100%);
+            background: var(--cream);
+            padding: 25px;
+            overflow-y: auto;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .cart-header h2 {
+            color: var(--brown);
+            font-family: Georgia, serif;
+        }
+
+        .close-cart {
+            border: none;
+            background: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .cart-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+        }
+
+        .cart-item-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .cart-item-name {
+            font-weight: bold;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .quantity-controls button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 50%;
+            background: var(--brown);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .remove-button {
+            margin-left: auto;
+            border: none;
+            background: none;
+            color: #b3342d;
+            cursor: pointer;
+        }
+
+        .cart-total {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #dfcdb2;
+            display: flex;
+            justify-content: space-between;
+            font-size: 23px;
+            font-weight: bold;
+            color: var(--brown);
+        }
+
+        /* =========================
+           CHECKOUT
+        ========================= */
+
+        .checkout {
+            background: white;
+        }
+
+        .checkout-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .checkout-form {
+            background: var(--light-cream);
+            padding: 35px;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+            color: var(--dark-brown);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d9c6aa;
+            border-radius: 10px;
+            font: inherit;
+            background: white;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .order-type {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .order-type label {
+            font-weight: normal;
+        }
+
+        .checkout-summary {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+
+        .summary-total {
+            border-top: 2px solid #ddd;
+            margin-top: 10px;
+            padding-top: 15px;
+            font-weight: bold;
+            font-size: 21px;
+        }
+
+        .place-order {
+            width: 100%;
+            margin-top: 25px;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            background: var(--green);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* =========================
+           CONTACT / FOOTER
+        ========================= */
+
+        .contact {
+            background: var(--dark-brown);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 10px 18px;
+            border-radius: 25px;
+        }
+
+        footer {
+            background: #351c0d;
+            color: #dbc7ae;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid,
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            section {
+                padding: 60px 15px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .checkout-form {
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+    <div class="nav-container">
+
+        <div class="nav-logo">
+            <img src="images/logo.jpg.jpg" alt="Nanay Helen's Kakanin Logo">
+            <span>Nanay Helen's Kakanin</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#checkout">Order</a></li>
+        </ul>
+
+        <button class="cart-button" onclick="openCart()">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </button>
+
+    </div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <img
+            class="hero-logo"
+            src="images/hero-kakanin.jpg.jpg"
+            alt="Nanay Helen's Kakanin"
+        >
+
+        <h1>Nanay Helen's Kakanin</h1>
+
+        <p>
+            Traditional Filipino delicacies made with love,
+            bringing the familiar taste of home to every gathering.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#menu" class="btn btn-primary">
+                View Our Menu
+            </a>
+
+            <a href="#gallery" class="btn btn-secondary">
+                See Our Kakanin
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about">
+
+    <div class="section-container">
+
+        <div class="about-grid">
+
+            <div class="about-image">
+                <img
+                    src="images/gallery-1.jpg"
+                    alt="Nanay Helen's Kakanin"
+                >
+            </div>
+
+            <div class="about-text">
+
+                <h3>A Taste of Filipino Tradition</h3>
+
+                <p>
+                    At Nanay Helen's Kakanin, we believe that Filipino
+                    delicacies are more than just food — they are part
+                    of our memories, celebrations, and family gatherings.
+                </p>
+
+                <p>
+                    Our kakanin is prepared with care and presented
+                    beautifully for your family, friends, celebrations,
+                    and special occasions.
+                </p>
+
+                <p>
+                    Every order is prepared to give you that comforting
+                    taste of homemade Filipino goodness.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section class="menu" id="menu">
+
+    <div class="section-container">
+
+        <div class="section-title">
+
+            <h2>Our Kakanin</h2>
+
+            <p>
+                Choose your favorite Filipino delicacies.
+            </p>
+
+        </div>
+
+        <div class="menu-grid">
+
+            <!-- SAPIN SAPIN -->
+
+            <div class="menu-card">
+
+                <h3>Sapin Sapin</h3>
+
+                <p class="description">
+                    Colorful layered Filipino rice cake.
+                </p>
+
+                <div class="price">₱65</div>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart('Sapin Sapin', 65)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PUTO KESO -->
+
+            <div class="menu-card">
+
+                <h3>Puto Keso</h3>
+
+                <p class="description">
+                    Soft steamed rice cakes topped with cheese.
+                </p>
+
+                <div class="price">₱65</div>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart('Puto Keso', 65)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- BIKO LATIK -->
+
+            <div class="menu-card">
+
+                <h3>Biko Latik</h3>
+
+                <p class="description">
+                    Sticky rice delicacy topped with rich latik.
+                </p>
+
+                <div class="price">₱70</div>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart('Biko Latik', 70)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- UBE BIKO -->
+
+            <div class="menu-card">
+
+                <h3>Ube Biko</h3>
+
+                <p class="description">
+                    Creamy purple yam flavored Filipino sticky rice.
+                </p>
+
+                <div class="price">₱80</div>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart('Ube Biko', 80)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- KUTSINTA -->
+
+            <div class="menu-card">
+
+                <h3>Kutsinta</h3>
+
+                <p class="description">
+                    Soft, chewy Filipino rice cakes.
+                </p>
+
+                <div class="price">₱65</div>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart('Kutsinta', 65)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PALITAW -->
+
+            <div class="menu-card">
+
+                <h3>Palitaw</h3>
+
+                <p class="description">
+                    Soft rice cakes coated with sesame and sugar.
+                </p>
+
+                <div class="price">₱65</div>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart('Palitaw', 65)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PACKAGES
+========================= -->
+
+<section class="packages">
+
+    <div class="section-container">
+
+        <div class="section-title">
+
+            <h2>Packages & Pricelist</h2>
+
+            <p>Perfect for family gatherings and celebrations.</p>
+
+        </div>
+
+
+        <div class="package-grid">
+
+            <!-- MIX AND MATCH -->
+
+            <div class="package-card">
+
+                <h3>Mix & Match Kakanin</h3>
+
+                <p>
+                    Choose 2 flavors:
+                    Sapin Sapin, Puto Keso,
+                    Kutsinta, or Palitaw.
+                </p>
+
+                <div class="package-row">
+                    <span>Mix & Match</span>
+                    <span class="package-price">₱75</span>
+                </div>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart('Mix & Match Kakanin', 75)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- BILAO -->
+
+            <div class="package-card">
+
+                <h3>Bilao & Tray</h3>
+
+                <div class="package-row">
+                    <span>12-inch Bilao</span>
+                    <span class="package-price">₱400</span>
+                </div>
+
+                <div class="package-row">
+                    <span>14-inch Bilao</span>
+                    <span class="package-price">₱500</span>
+                </div>
+
+                <div class="package-row">
+                    <span>Ube Biko with Cheese<br>1250ml Tray</span>
+                    <span class="package-price">₱150</span>
+                </div>
+
+                <div class="package-row">
+                    <span>Special Cassava Cake<br>1250ml Tray</span>
+                    <span class="package-price">₱150</span>
+                </div>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart('12-inch Bilao', 400)"
+                >
+                    Add 12-inch Bilao
+                </button>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart('14-inch Bilao', 500)"
+                >
+                    Add 14-inch Bilao
+                </button>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart('Ube Biko with Cheese - 1250ml Tray', 150)"
+                >
+                    Add Ube Biko Tray
+                </button>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart('Special Cassava Cake - 1250ml Tray', 150)"
+                >
+                    Add Cassava Cake Tray
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="gallery" id="gallery">
+
+    <div class="section-container">
+
+        <div class="section-title">
+
+            <h2>Our Kakanin</h2>
+
+            <p>
+                Real photos of our actual products —
+                no AI-generated food photos.
+            </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <img
+                class="gallery-item"
+                src="images/gallery-1.jpg"
+                alt="Nanay Helen's Kakanin"
+            >
+
+            <img
+                class="gallery-item"
+                src="images/gallery-2.jpg"
+                alt="Filipino kakanin"
+            >
+
+            <img
+                class="gallery-item"
+                src="images/gallery-3.jpg"
+                alt="Nanay Helen's kakanin products"
+            >
+
+            <img
+                class="gallery-item"
+                src="images/gallery-4.jpg"
+                alt="Filipino delicacies"
+            >
+
+            <img
+                class="gallery-item"
+                src="images/gallery-5.jpg"
+                alt="Kakanin bilao"
+            >
+
+            <img
+                class="gallery-item"
+                src="images/gallery-6.jpg"
+                alt="Nanay Helen's Kakanin"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CHECKOUT
+========================= -->
+
+<section class="checkout" id="checkout">
+
+    <div class="checkout-container">
+
+        <div class="section-title">
+
+            <h2>Checkout</h2>
+
+            <p>
+                Fill out your information and send your order.
+            </p>
+
+        </div>
+
+
+        <form
+            class="checkout-form"
+            onsubmit="placeOrder(event)"
+        >
+
+            <div class="form-group">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="contactNumber">
+                    Contact Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="contactNumber"
+                    placeholder="09XXXXXXXXX"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Order Type
+                </label>
+
+                <div class="order-type">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="orderType"
+                            value="Pick-up"
+                            checked
+                            onchange="updateAddressField()"
+                        >
+                        Pick-up
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="orderType"
+                            value="Delivery"
+                            onchange="updateAddressField()"
+                        >
+                        Delivery
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group" id="addressGroup" style="display: none;">
+
+                <label for="address">
+                    Delivery Address
+                </label>
+
+                <input
+                    type="text"
+                    id="address"
+                    placeholder="Enter delivery address"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="notes">
+                    Order Notes
+                </label>
+
+                <textarea
+                    id="notes"
+                    placeholder="Special requests or additional notes..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="checkout-summary">
+
+                <h3>Your Order</h3>
+
+                <div id="checkout-items">
+                    <p>Your cart is empty.</p>
+                </div>
+
+                <div class="summary-line summary-total">
+
+                    <span>TOTAL</span>
+
+                    <span>
+                        ₱<span id="checkout-total">0</span>
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                id="submit-btn"
+                class="place-order"
+            >
+                PLACE ORDER
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact">
+
+    <div class="section-container">
+
+        <h2>Nanay Helen's Kakanin</h2>
+
+        <p>
+            Authentic Filipino delicacies made with care.
+        </p>
+
+        <p>
+            📞 0967 248 0580
+        </p>
+
+        <div class="social-links">
+
+            <a
+                href="https://m.me/61593343485442"
+                target="_blank"
+            >
+                Facebook Messenger
+            </a>
+
+            <a
+                href="https://www.instagram.com/nanayhelens.kakanin"
+                target="_blank"
+            >
+                Instagram
+            </a>
+
+            <a
+                href="https://www.tiktok.com/@nanayhelens.kakanin"
+                target="_blank"
+            >
+                TikTok
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    © 2026 Nanay Helen's Kakanin. All rights reserved.
+</footer>
+
+
+<!-- =========================
+     CART
+========================= -->
+
+<div
+    class="cart-overlay"
+    id="cart-overlay"
+    onclick="closeCartOutside(event)"
+>
+
+    <div
+        class="cart-panel"
+        onclick="event.stopPropagation()"
+    >
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button
+                class="close-cart"
+                onclick="closeCart()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="cart-items">
+            <p>Your cart is empty.</p>
+        </div>
+
+
+        <div class="cart-total">
+
+            <span>TOTAL</span>
+
+            <span>
+                ₱<span id="cart-total">0</span>
+            </span>
+
+        </div>
+
+
+        <a
+            href="#checkout"
+            class="btn btn-primary"
+            style="display:block;text-align:center;margin-top:20px;"
+            onclick="closeCart()"
+        >
+            Proceed to Checkout
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /* =======================================================
+       GOOGLE APPS SCRIPT ENDPOINT URL
+    ======================================================= */
+    const GOOGLE_SHEETS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_FoRvnQV_nXNjhcsmPSenppyJmCSkNNjqw2xmpkVaTFUg7XZMfBkCkX6a5EbDyudZNw/exec";
+
+    let cart = [];
+
+    function addToCart(name, price) {
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({ name: name, price: price, quantity: 1 });
+        }
+        updateCart();
+        openCart();
+    }
+
+    function updateCart() {
+        const cartItems = document.getElementById("cart-items");
+        const checkoutItems = document.getElementById("checkout-items");
+        const cartCount = document.getElementById("cart-count");
+        const cartTotal = document.getElementById("cart-total");
+        const checkoutTotal = document.getElementById("checkout-total");
+
+        if (cart.length === 0) {
+            cartItems.innerHTML = "<p>Your cart is empty.</p>";
+            checkoutItems.innerHTML = "<p>Your cart is empty.</p>";
+            cartCount.textContent = "0";
+            cartTotal.textContent = "0";
+            checkoutTotal.textContent = "0";
+            return;
+        }
+
+        let total = 0;
+        let count = 0;
+
+        cartItems.innerHTML = "";
+        checkoutItems.innerHTML = "";
+
+        cart.forEach((item, index) => {
+            const subtotal = item.price * item.quantity;
+            total += subtotal;
+            count += item.quantity;
+
+            cartItems.innerHTML += `
+                <div class="cart-item">
+                    <div class="cart-item-top">
+                        <span class="cart-item-name">${item.name}</span>
+                        <span>₱${subtotal}</span>
+                    </div>
+                    <div class="quantity-controls">
+                        <button type="button" onclick="changeQuantity(${index}, -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button type="button" onclick="changeQuantity(${index}, 1)">+</button>
+                        <button type="button" class="remove-button" onclick="removeItem(${index})">Remove</button>
+                    </div>
+                </div>
+            `;
+
+            checkoutItems.innerHTML += `
+                <div class="summary-line">
+                    <span>${item.name} x ${item.quantity}</span>
+                    <span>₱${subtotal}</span>
+                </div>
+            `;
+        });
+
+        cartCount.textContent = count;
+        cartTotal.textContent = total;
+        checkoutTotal.textContent = total;
+    }
+
+    function changeQuantity(index, change) {
+        cart[index].quantity += change;
+        if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+        }
+        updateCart();
+    }
+
+    function removeItem(index) {
+        cart.splice(index, 1);
+        updateCart();
+    }
+
+    function openCart() {
+        document.getElementById("cart-overlay").classList.add("active");
+    }
+
+    function closeCart() {
+        document.getElementById("cart-overlay").classList.remove("active");
+    }
+
+    function closeCartOutside(event) {
+        if (event.target.id === "cart-overlay") {
+            closeCart();
+        }
+    }
+
+    function updateAddressField() {
+        const orderType = document.querySelector('input[name="orderType"]:checked').value;
+        const addressGroup = document.getElementById("addressGroup");
+        const addressInput = document.getElementById("address");
+
+        if (orderType === "Delivery") {
+            addressGroup.style.display = "block";
+            addressInput.setAttribute("required", "true");
+        } else {
+            addressGroup.style.display = "none";
+            addressInput.removeAttribute("required");
+        }
+    }
+
+    async function placeOrder(event) {
+        event.preventDefault();
+
+        if (cart.length === 0) {
+            alert("Your cart is empty! Please add some kakanin before ordering.");
+            return;
+        }
+
+        const submitBtn = document.getElementById("submit-btn");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "PROCESSING ORDER...";
+
+        const name = document.getElementById("fullName").value;
+        const contact = document.getElementById("contactNumber").value;
+        const orderType = document.querySelector('input[name="orderType"]:checked').value;
+        const address = document.getElementById("address").value;
+        const notes = document.getElementById("notes").value;
+        const total = document.getElementById("checkout-total").textContent;
+
+        const itemSummary = cart.map(i => `${i.name} (${i.quantity}x)`).join(", ");
+        const formattedItemList = cart.map(i => `- ${i.name} (${i.quantity}x) = ₱${i.price * i.quantity}`).join("\n");
+
+        // Format payload as URLSearchParams for optimal Google Apps Script compatibility
+        const formData = new URLSearchParams();
+        formData.append("fullName", name);
+        formData.append("contactNumber", contact);
+        formData.append("orderType", orderType);
+        formData.append("address", orderType === "Delivery" ? address : "N/A (Pick-up)");
+        formData.append("notes", notes || "None");
+        formData.append("items", itemSummary);
+        formData.append("total", total);
+
+        // Send Order Data to Google Sheet
+        try {
+            await fetch(GOOGLE_SHEETS_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: formData.toString()
+            });
+        } catch (err) {
+            console.error("Error saving to Google Sheet:", err);
+        }
+
+        // Construct Messenger Link Message
+        let message = `Hello Nanay Helen's Kakanin! I would like to place an order:\n\n` +
+                      `*Customer Details:*\n` +
+                      `Name: ${name}\n` +
+                      `Contact: ${contact}\n` +
+                      `Order Type: ${orderType}\n`;
+
+        if (orderType === "Delivery") {
+            message += `Address: ${address}\n`;
+        }
+
+        if (notes.trim() !== "") {
+            message += `Notes: ${notes}\n`;
+        }
+
+        message += `\n*Order Items:*\n${formattedItemList}\n\n` +
+                   `*Total Amount:* ₱${total}`;
+
+        const messengerUrl = `https://m.me/61593343485442?text=${encodeURIComponent(message)}`;
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = "PLACE ORDER";
+
+        // Open Facebook Messenger with pre-filled message
+        window.open(messengerUrl, "_blank");
+    }
+
+</script>
+
+</body>
+</html>
